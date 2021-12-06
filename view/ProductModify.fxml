@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductModifyController">
+   <children>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff00" height="638.0" layoutX="21.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="1158.0" />
+      <TableView fx:id="partsTable" layoutX="673.0" layoutY="103.0" prefHeight="194.0" prefWidth="470.0">
+        <columns>
+          <TableColumn fx:id="partsIDCol" prefWidth="67.0" text="Part ID" />
+          <TableColumn fx:id="partsNameCol" prefWidth="114.0" text="Part Name" />
+            <TableColumn fx:id="partsInventoryCol" prefWidth="117.0" text="Inventory Level" />
+            <TableColumn fx:id="partsUnitPriceCol" prefWidth="171.0" text="Price / Cost per Unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="productsTable" layoutX="673.0" layoutY="369.0" prefHeight="194.0" prefWidth="470.0">
+         <columns>
+            <TableColumn fx:id="productsIDCol" prefWidth="91.0" text="Part ID" />
+            <TableColumn fx:id="productsNameCol" prefWidth="119.0" text="Part Name" />
+            <TableColumn fx:id="productsInventoryCol" prefWidth="100.0" text="Inventory Level" />
+            <TableColumn fx:id="productsUnitPriceCol" prefWidth="159.0" text="Price / Cost per Unit" />
+         </columns>
+      </TableView>
+      <Button fx:id="addBtn" layoutX="1054.0" layoutY="322.0" mnemonicParsing="false" onAction="#onAdd" text="Add" />
+      <Button fx:id="removeAssociatedBtn" layoutX="992.0" layoutY="587.0" mnemonicParsing="false" onAction="#onRemoveAssociated" text="Remove Associated Part" />
+      <Button fx:id="cancelBtn" layoutX="1082.0" layoutY="620.0" mnemonicParsing="false" onAction="#onReturn" text="Cancel" />
+      <Button fx:id="saveBtn" layoutX="997.0" layoutY="620.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
+      <Text layoutX="101.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Product" wrappingWidth="166.400390625">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="idField" disable="true" layoutX="193.0" layoutY="169.0" promptText="Auto Gen- Disabled" />
+      <TextField fx:id="nameField" layoutX="193.0" layoutY="207.0" />
+      <TextField fx:id="invField" layoutX="193.0" layoutY="246.0" prefHeight="25.0" prefWidth="94.0" />
+      <TextField fx:id="priceField" layoutX="193.0" layoutY="286.0" prefHeight="25.0" prefWidth="94.0" />
+      <TextField fx:id="maxField" layoutX="193.0" layoutY="326.0" prefHeight="25.0" prefWidth="94.0" />
+      <TextField fx:id="minField" layoutX="367.0" layoutY="326.0" prefHeight="25.0" prefWidth="94.0" />
+      <Text layoutX="136.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="135.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="135.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inv" wrappingWidth="52.0" />
+      <Text layoutX="134.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+      <Text layoutX="134.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" />
+      <Text layoutX="328.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" />
+      <Label fx:id="errorMsgDisplay" layoutX="79.0" layoutY="399.0" prefHeight="194.0" prefWidth="485.0" />
+      <TextField fx:id="partSearch" layoutX="963.0" layoutY="58.0" onAction="#onPartsSearch" prefHeight="25.0" prefWidth="182.0" promptText="Search by Part ID or Name" />
+   </children>
+</AnchorPane>
